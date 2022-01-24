@@ -1,0 +1,98 @@
+@font-face {
+    font-family: 'Neue Haas';
+    src: url('fonts/NHaasGroteskTXStd-55Rg.woff2') format('woff2'),
+        url('fonts/NHaasGroteskTXStd-55Rg.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: "Neue Haas";
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    font-style: italic;
+}
+
+h1 {
+    font-size: 4vw;
+    font-weight: normal;
+    line-height: 1.1;
+}
+
+@media(max-width: 1000px) {
+    h1 {
+        font-size: 5vw;
+    }
+}
+@media(max-width: 700px) {
+    h1 {
+        font-size: 7vw;
+    }
+}
+h1 .text {
+    mix-blend-mode: darken;
+}
+
+h1 .text:hover a {
+    color: white !important;
+}
+
+h1 .text:hover .layer2 {
+    background-color: white;
+    color: black;
+    z-index: 200;
+    padding: 0px 0px;
+    margin: 0px 0px;
+    mix-blend-mode: difference;
+}
+
+h1 .text:hover {
+    mix-blend-mode: darken;
+}
+
+.layer2:hover {
+    mix-blend-mode: normal;
+    color: white;
+
+
+}
+
+.hover-style-1 {
+    color: white;
+    background-color: rgba(0, 0, 255, .9);
+    mix-blend-mode: darken;
+    border-radius: 1000px;
+    padding: 0px 20px;
+    margin: 0px -20px;
+    /* transition: all 150ms ease-in; */
+}
+
+.hover-style-2 {
+    color: white;
+    background-color: rgba(0, 0, 255, .9);
+    mix-blend-mode: darken;
+    padding: 0px 10px;
+    margin: 0px -10px;
+}
+
+
+.subtext {
+    width: 60vw;
+    margin-top: 20px;
+}
+
+.container {
+    padding: 15px;
+}
