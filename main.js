@@ -2,7 +2,7 @@ let text = [
   'Independent Publishing Fair Leipzig, March 19, 2022.',
   '<span class="layer2">It’s a book</span>, it’s a word that you choose, it’s a language in use.',
   'Opening hours 12 pm – 9 pm, symposium 1 pm – 6 pm.',
-  'Please be welcome to visit our marketplace and symposium at the <span class="layer2">Academy of Fine Arts Leipzig, Wächterstraße 11, 04107 Leipzig.</span> Join the digital event at <a href="https://itsabook.de">www.itsabook.de.</a>',
+  'Please be welcome to visit our marketplace and symposium at the <span class="layer2">Academy of Fine Arts Leipzig, Wächterstraße 11, 04107 Leipzig.</span> Join the digital right here soon! (<a href="https://itsabook.de">www.itsabook.de.</a>)',
   'Submit your books until February 14, publishers to <a href="mailto:publishers@itsabook.de">publishers@itsabook.de</a> and students to <a href="mailto:students@itsabook.de">students@itsabook.de</a>.',
   'Kindly supported by Support-Büro der HGB Leipzig and DZA Druckerei zu Altenburg.'
 ]
