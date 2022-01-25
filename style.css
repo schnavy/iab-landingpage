@@ -111,6 +111,12 @@ h1 .text::selection {
     grid-template-columns: min-content 1fr;
     gap: 100px;
 }
+@media(max-width: 1000px) {
+    .subtext-cols {
+    grid-template-columns:1fr;
+    gap: 10px;
+    }
+}
 
 .subtext {
     margin-top: 20px;
