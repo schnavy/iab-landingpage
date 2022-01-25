@@ -11,14 +11,17 @@
 * {
     margin: 0px;
     padding: 0px;
+    cursor: none;
 }
 
 body {
     font-family: "Neue Haas";
 }
 
-a {
+a { 
     color: black;
+    cursor: url(hand-pointer.png) !important;
+
 }
 
 a:hover {
@@ -44,7 +47,6 @@ h1 {
 h1 .text {
     mix-blend-mode: darken;
 }
-
 h1 .text:hover a {
     color: white !important;
 }
@@ -63,10 +65,17 @@ h1 .text:hover {
 }
 
 .layer2:hover {
-    mix-blend-mode: normal;
     color: white;
-
-
+    background-color: transparent!important;
+    mix-blend-mode: normal !important;
+}
+h1 .text::selection {
+    background-color: black;
+    color: white;
+}
+    .layer2::selection {
+    background-color: white;
+    color: black;
 }
 
 .hover-style-1 {
@@ -86,13 +95,54 @@ h1 .text:hover {
     padding: 0px 10px;
     margin: 0px -10px;
 }
+.hover-style-2::after {
+    
+    background-color: yellow;
+    mix-blend-mode: difference;
+    width: 5px;
+    padding: 0px 5px;
+    margin:0px  -10px;
+    content: " ";
+}
 
+.subtext-cols{
+    display: grid;
+    width: 100%;
+    grid-template-columns: min-content 1fr;
+    gap: 100px;
+}
 
 .subtext {
-    width: 60vw;
     margin-top: 20px;
+}
+.subtext.social {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+      white-space: nowrap;
+
 }
 
 .container {
     padding: 15px;
+}
+
+#cursor{
+    position: absolute;
+    top: 100px;
+    left: 200px;
+    width: 5px;
+    height: 50px;
+    background-color: black;
+    overflow: visible;
+    pointer-events: none;
+}
+#cursor.pointer {
+    background-color: transparent !important;
+    background-image: url("hand-pointer.png") !important;
+    background-repeat: no-repeat;
+    background-position:top left ;
+    background-size: 50px;
+    width: 50px;
+    height: 80px;
 }

@@ -11,6 +11,22 @@ let mainText = document.querySelector('.mainText')
 
 let colors = ['#01956e', '#fe601e', '#ff8657', '#0047f5', '#008cc8', '#ffed3b']
 
+let cursor = document.getElementById('cursor')
+
+window.addEventListener('mousemove', e => {
+  if(e.target.tagName.toLowerCase() === 'a'){
+    cursor.classList.add("pointer")  
+  }else{
+    cursor.classList.remove("pointer")  
+
+  }
+  console.log(
+    cursor.getBoundingClientRect().height
+  );
+  cursor.style.top = (e.clientY) + 'px'
+  cursor.style.left = (e.clientX) + 'px'
+})
+
 text.forEach(t => {
   let text = document.createElement('span')
   text.classList.add('text')
@@ -22,20 +38,46 @@ text.forEach(t => {
   mainText.appendChild(text)
   mainText.appendChild(spacer)
   text.addEventListener('mouseenter', e => {
-      if (!text.classList.contains('hover-style-1')) {
-            let r = Math.floor(Math.random() * colors.length);
-            console.log(r);
-            console.log(colors.length);
-            text.classList.add('hover-style-1');
-            text.style.backgroundColor = colors[r];
-        }
+    if (!text.classList.contains('hover-style-1')) {
+      toggleHightlight(text)
+    }
   })
   text.addEventListener('mouseleave', e => {
-    if (text.classList.contains('hover-style-1')) {
-      text.classList.remove('hover-style-1')
-      text.style.backgroundColor = 'transparent'
-    }
+    toggleHightlight(text)
   })
 })
 
-let schnipsel = document.querySelectorAll('span .text')
+
+
+function toggleHightlight (elem) {
+  let hoverStyle = 'hover-style-' + Math.floor(Math.random() * 2 + 1)
+
+  if (!elem.classList.contains('hover')) {
+    let r = Math.floor(Math.random() * colors.length)
+    console.log(colors.length)
+    elem.classList.add(hoverStyle)
+    elem.classList.add('hover')
+    elem.style.backgroundColor = colors[r]
+  } else {
+    removeAllHighlights(elem)
+  }
+}
+function removeAllHighlights (elem) {
+  elem.classList.remove('hover')
+  elem.classList.remove('hover-style-1')
+  elem.classList.remove('hover-style-2')
+  elem.style.backgroundColor = 'transparent'
+}
+
+function hightlightRandomSchnipsel () {
+  let schnipsel = document.querySelectorAll('span.text')
+  schnipsel.forEach(elem => {
+    elem.classList.remove('hover-style-1')
+  })
+  let r = Math.floor(Math.random() * schnipsel.length)
+  console.log(schnipsel[r])
+  let rc = Math.floor(Math.random() * colors.length)
+
+  schnipsel[r].classList.add("hover-style-1'")
+  elem.style.backgroundColor = colors[rc]
+}
