@@ -130,15 +130,15 @@ h1 .text::selection {
 }
 
 .container {
-    padding: 15px;
+    padding: 10px 15px;
 }
 
 #cursor{
     position: absolute;
     top: 100px;
     left: 200px;
-    width: 5px;
-    height: 50px;
+    width: 0.4vw;
+    height: 4vw;
     background-color: black;
     overflow: visible;
     pointer-events: none;
