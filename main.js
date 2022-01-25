@@ -27,6 +27,19 @@ window.addEventListener('mousemove', e => {
   cursor.style.left = (e.clientX) + 'px'
 })
 
+
+window.addEventListener('touchstart', e => {
+  if (e.target.tagName.toLowerCase() === 'a') {
+    cursor.classList.add('pointer')
+  } else {
+    cursor.classList.remove('pointer')
+  }
+  console.log(cursor.getBoundingClientRect().height)
+  cursor.style.top = e.clientY + 'px'
+  cursor.style.left = e.clientX + 'px'
+})
+
+
 text.forEach(t => {
   let text = document.createElement('span')
   text.classList.add('text')
