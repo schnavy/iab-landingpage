@@ -1,5 +1,5 @@
-const IS_TOUCH = 'ontouchstart' in window || navigator.msMaxTouchPoints > 0
 const IS_MOBILE = window.innerWidth <= 800
+const IS_TOUCH = 'ontouchstart' in window || navigator.msMaxTouchPoints > 0
 
 let text = [
   'Independent Publishing Fair Leipzig, March 19, 2022.',
@@ -10,6 +10,7 @@ let text = [
   'Kindly supported by Support-Büro der HGB Leipzig and DZA Druckerei zu Altenburg.',
   'Follow us on <a target="_blank" href="https://www.instagram.com/itsabook_leipzig/">Instagram</a> to stay updated.'
 ]
+let textElements = [];
 let container = document.querySelector('.container')
 let mainText = document.querySelector('.mainText')
 
@@ -38,6 +39,8 @@ text.forEach(t => {
   spacer.innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
   mainText.appendChild(text)
   mainText.appendChild(spacer)
+  textElements.push(text);
+
   if (!IS_TOUCH) {
     text.addEventListener('mouseenter', e => {
       if (!text.classList.contains('hover-style-1')) {
@@ -57,6 +60,12 @@ if (IS_TOUCH) {
     }
   })
 }
+
+toggleHightlight(textElements[Math.floor(Math.random()*text.length)])
+toggleHightlight(textElements[Math.floor(Math.random() * text.length)])
+
+
+
 
 function toggleHightlight (elem) {
   let hoverStyle = 'hover-style-' + Math.floor(Math.random() * 2 + 1)
