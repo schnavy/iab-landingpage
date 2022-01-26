@@ -1,3 +1,6 @@
+const IS_TOUCH = 'ontouchstart' in window || navigator.msMaxTouchPoints > 0
+const IS_MOBILE = window.innerWidth <= 800
+
 let text = [
   'Independent Publishing Fair Leipzig, March 19, 2022.',
   '<span class="layer2">It’s a book</span>, it’s a word that you choose, it’s a language in use.',
@@ -14,21 +17,6 @@ let colors = ['#01956e', '#fe601e', '#ff8657', '#0047f5', '#008cc8', '#ffed3b']
 let cursor = document.getElementById('cursor')
 
 window.addEventListener('mousemove', e => {
-  if(e.target.tagName.toLowerCase() === 'a'){
-    cursor.classList.add("pointer")  
-  }else{
-    cursor.classList.remove("pointer")  
-
-  }
-  console.log(
-    cursor.getBoundingClientRect().height
-  );
-  cursor.style.top = (e.clientY) + 'px'
-  cursor.style.left = (e.clientX) + 'px'
-})
-
-
-window.addEventListener('touchstart', e => {
   if (e.target.tagName.toLowerCase() === 'a') {
     cursor.classList.add('pointer')
   } else {
@@ -38,7 +26,6 @@ window.addEventListener('touchstart', e => {
   cursor.style.top = e.clientY + 'px'
   cursor.style.left = e.clientX + 'px'
 })
-
 
 text.forEach(t => {
   let text = document.createElement('span')
@@ -50,17 +37,25 @@ text.forEach(t => {
   spacer.innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;'
   mainText.appendChild(text)
   mainText.appendChild(spacer)
-  text.addEventListener('mouseenter', e => {
-    if (!text.classList.contains('hover-style-1')) {
+  if (!IS_TOUCH) {
+    text.addEventListener('mouseenter', e => {
+      if (!text.classList.contains('hover-style-1')) {
+        toggleHightlight(text)
+      }
+    })
+    text.addEventListener('mouseleave', e => {
       toggleHightlight(text)
+    })
+  }
+})
+if (IS_TOUCH) {
+  window.addEventListener('touchstart', e => {
+    console.log(e)
+    if (e.target.tagName.toLowerCase() === 'span') {
+      toggleHightlight(e.target)
     }
   })
-  text.addEventListener('mouseleave', e => {
-    toggleHightlight(text)
-  })
-})
-
-
+}
 
 function toggleHightlight (elem) {
   let hoverStyle = 'hover-style-' + Math.floor(Math.random() * 2 + 1)
