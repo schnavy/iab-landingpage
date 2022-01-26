@@ -83,7 +83,8 @@ h1 .text:hover {
     mix-blend-mode: normal !important;
 }
 
-h1 .text::selection {
+h1 .text::selection,
+h1 .spacer::selection {
     background-color: black;
     color: white;
 }
