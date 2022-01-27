@@ -56,7 +56,7 @@ if (!IS_TOUCH) {
     })
   })
 }
-if (IS_TOUCH) {
+if (IS_MOBILE) {
   // window.addEventListener('touchend', e => {
   //   console.log(e)
   //   if (e.target.tagName.toLowerCase() === 'span') {
@@ -66,6 +66,7 @@ if (IS_TOUCH) {
 
   let counter = textElements.length - 1
   setInterval(e => {
+    console.log("hiih");
     if (counter % 2 == 0) {
       hightlightRandomSchnipsel()
     }
@@ -77,7 +78,7 @@ if (IS_TOUCH) {
     }
     removeAllHighlights(textElements[counter])
     toggleHightlight(textElements[counter])
-  }, 1200)
+  }, 1300)
 } else {
   toggleHightlight(textElements[Math.floor(Math.random() * text.length)])
   toggleHightlight(textElements[Math.floor(Math.random() * text.length)])
