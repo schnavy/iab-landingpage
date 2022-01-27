@@ -104,8 +104,8 @@ h1 .spacer::selection {
     background-color: rgba(0, 0, 255, .9);
     mix-blend-mode: darken;
     border-radius: 1000px;
-    padding: 0px 20px;
-    margin: 0px -20px;
+    padding: 0px 10px;
+    margin: 0px -10px;
     /* transition: all 150ms ease-in; */
 }
 
@@ -130,10 +130,9 @@ h1 .spacer::selection {
 
 .subtext-cols {
     display: grid;
-    
-    width: 100%;
-    grid-template-columns: min-content min-content max-content;
+    grid-template-columns: min-content auto;
     gap: 60px;
+    width: 100%;
     margin-top: 20px;
 }
 
@@ -141,7 +140,7 @@ h1 .spacer::selection {
     margin: 5px;
 }
 .subtext{
-    max-width: 800px;
+    /* max-width: 1000px; */
 }
 
 .subtext span, .social {
@@ -158,7 +157,7 @@ h1 .spacer::selection {
 
 @media(max-width: 1000px) {
     .subtext-cols {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         gap: 20px;
         margin-top: 30px;
     }
@@ -171,16 +170,24 @@ h1 .spacer::selection {
 
 
 .social {
-    display: grid;
+    /* display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 10px; */
+      align-self: start;
+    width: min-content;
     white-space: nowrap;
-    padding-right: 2px;
+    padding-right: 5px;
 }
 
 .container {
+    display: grid;
+    grid-template-rows: auto min-content;
+    gap: 60px;
+    align-items: stretch;
     padding: 10px 15px;
-    max-width: 100vw;
+    max-width: 100%;
+    box-sizing: border-box;
+    min-height: 100vh;
     overflow: hidden;
 }
 
@@ -188,6 +195,26 @@ h1 .spacer::selection {
     .container {
         padding: 10px;
     }
+}
+
+
+.logo{
+    display: inline;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, min-content);
+    align-items: stretch;
+    justify-content: space-between;
+    padding: 0px 3px;
+}
+.logo img{
+    height: 40px;
+    width: auto;
+}
+@media(max-width: 1000px) {
+ .logo img {
+     height: 20px;
+ }
 }
 
 #cursor {
