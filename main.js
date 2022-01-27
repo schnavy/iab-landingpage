@@ -57,12 +57,12 @@ if (!IS_TOUCH) {
   })
 }
 if (IS_MOBILE) {
-  // window.addEventListener('touchend', e => {
-  //   console.log(e)
-  //   if (e.target.tagName.toLowerCase() === 'span') {
-  //     toggleHightlight(e.target)
-  //   }
-  // })
+  window.addEventListener('touchend', e => {
+    console.log(e)
+    if (e.target.tagName.toLowerCase() === 'span') {
+      toggleHightlight(e.target)
+    }
+  })
 
   let counter = textElements.length - 1
   setInterval(e => {
