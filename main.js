@@ -31,13 +31,13 @@ window.addEventListener('mousemove', e => {
 text.forEach(t => {
   let text = document.createElement('span')
   text.classList.add('text')
-  let spacer = document.createElement('span')
-  spacer.classList.add('spacer')
+
+
 
   text.innerHTML = t + ' '
-  spacer.innerHTML = '&nbsp;'
+
   mainText.appendChild(text)
-  mainText.appendChild(spacer)
+  
   textElements.push(text)
 })
 
@@ -78,7 +78,7 @@ if (IS_MOBILE) {
     }
     removeAllHighlights(textElements[counter])
     toggleHightlight(textElements[counter])
-  }, 1300)
+  }, 1600)
 } else {
   toggleHightlight(textElements[Math.floor(Math.random() * text.length)])
   toggleHightlight(textElements[Math.floor(Math.random() * text.length)])

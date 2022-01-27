@@ -119,12 +119,14 @@ h1 .spacer::selection {
 
 .hover-style-2::after {
     display: inline-block;
+    position: absolute;
     background-color: yellow;
     color: yellow;
     mix-blend-mode: difference;
-    transform: translateY(3px);
-    padding: 0px 10px;
-    margin: 0px -10px;
+    transform: translate(-11px, 3px);
+    padding: 0px 8px;
+    width: 5px;
+    /* margin: 0px -10px; */
     content: "I";
 }
 
