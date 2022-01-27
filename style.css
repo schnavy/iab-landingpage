@@ -109,23 +109,30 @@ h1 .spacer::selection {
     /* transition: all 150ms ease-in; */
 }
 
+@media (max-width: 800) {
+    .hover-style-1 {
+        padding: 0px 5px;
+        margin: 0px -5px;
+    }
+}
+
 .hover-style-2 {
     color: white;
     background-color: rgba(0, 0, 255, .9);
     mix-blend-mode: darken;
-    padding: 0px 10px;
-    margin: 0px -10px;
+    padding: 0px 5px;
+    margin: 0px -5px;
 }
 
 .hover-style-2::after {
     display: inline-block;
     position: absolute;
-    background-color: yellow;
-    color: yellow;
+    background-color: white;
+    color: white;
     mix-blend-mode: difference;
     transform: translate(-11px, 3px);
     padding: 0px 8px;
-    width: 5px;
+    width: 0px;
     /* margin: 0px -10px; */
     content: "I";
 }
@@ -141,11 +148,13 @@ h1 .spacer::selection {
 .subtext-cols img {
     margin: 5px;
 }
-.subtext{
+
+.subtext {
     /* max-width: 1000px; */
 }
 
-.subtext span, .social {
+.subtext span,
+.social {
     background-color: white;
     border-bottom: 2px solid black;
     border-right: 2px solid black;
@@ -167,15 +176,13 @@ h1 .spacer::selection {
     .subtext {
         grid-column: 1 / 3;
     }
-
 }
-
 
 .social {
     /* display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px; */
-      align-self: start;
+    align-self: start;
     width: min-content;
     white-space: nowrap;
     padding-right: 5px;
@@ -199,8 +206,7 @@ h1 .spacer::selection {
     }
 }
 
-
-.logo{
+.logo {
     display: inline;
     width: 100%;
     display: grid;
@@ -209,14 +215,16 @@ h1 .spacer::selection {
     justify-content: space-between;
     padding: 0px 3px;
 }
-.logo img{
+
+.logo img {
     height: 40px;
     width: auto;
 }
+
 @media(max-width: 1000px) {
- .logo img {
-     height: 20px;
- }
+    .logo img {
+        height: 20px;
+    }
 }
 
 #cursor {
