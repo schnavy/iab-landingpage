@@ -21,7 +21,7 @@ body {
 a {
     color: black;
     text-decoration: none;
-    cursor: url(hand-pointer.png) !important;
+    cursor: url(assets/hand-pointer.png) !important;
 }
 
 a.mail {
@@ -65,9 +65,9 @@ h1 .text {
     mix-blend-mode: darken;
 }
 
-h1 .text:hover a {
+/* h1 .text:hover a {
     color: white !important;
-}
+} */
 
 h1 .text:hover .layer2 {
     background-color: white;
@@ -98,7 +98,6 @@ h1 .spacer::selection {
     background-color: white;
     color: black;
 }
-
 .hover-style-1 {
     color: white;
     background-color: rgba(0, 0, 255, .9);
@@ -117,6 +116,10 @@ h1 .spacer::selection {
     margin: 0px -5px;
 }
 
+.hover-style-1 a,
+.hover-style-2 a{
+color: white !important;
+}
 .hover-style-2::after {
     display: inline-block;
     position: absolute;
@@ -258,7 +261,7 @@ h1 .spacer::selection {
 
 #cursor.pointer {
     background-color: transparent !important;
-    background-image: url("hand-pointer.png") !important;
+    background-image: url("assets/hand-pointer.png") !important;
     background-repeat: no-repeat;
     background-position: top left;
     background-size: 50px;
