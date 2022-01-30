@@ -1,17 +1,9 @@
 const IS_MOBILE = window.innerWidth <= 800
 const IS_TOUCH = 'ontouchstart' in window || navigator.msMaxTouchPoints > 0
 
-let text = [
-  'Independent Publishing Fair Leipzig, March 19, 2022.',
-  '<span class="layer2">It’s a book</span>, it’s a word that you choose, it’s a language in use.',
-  'Opening hours 12&nbsp;pm&nbsp;–&nbsp;9&nbsp;pm, symposium 1&nbsp;pm&nbsp;–&nbsp;6&nbsp;pm.',
-  'Please be welcome to visit our marketplace and symposium at the <span class="layer2">Academy of Fine Arts Leipzig, Wächterstraße 11, 04107 Leipzig.</span> Join the digital event right here! (<a target="_blank"  href="https://itsabook.de">www.itsabook.de</a>).',
-  'Submit your books until <span class="layer2">February 14</span>. Publishers to <a class="mail" href="mailto:publishers@itsabook.de">publishers@itsabook.de</a> and&nbsp;students&nbsp;to <a class="mail" href="mailto:students@itsabook.de">students@itsabook.de</a>.',
-  'Kindly supported by Support-Büro der HGB Leipzig and DZA Druckerei zu Altenburg.'
-]
-let textElements = []
 let container = document.querySelector('.container')
 let mainText = document.querySelector('.mainText')
+let textElements = document.querySelectorAll(".text")
 
 let colors = ['#01956e', '#fe601e', '#ff8657', '#0047f5', '#008cc8', '#ffed3b']
 
@@ -28,18 +20,6 @@ window.addEventListener('mousemove', e => {
   cursor.style.left = e.clientX + 'px'
 })
 
-text.forEach(t => {
-  let text = document.createElement('span')
-  text.classList.add('text')
-
-
-
-  text.innerHTML = t + ' '
-
-  mainText.appendChild(text)
-  
-  textElements.push(text)
-})
 
 if (!IS_TOUCH) {
   textElements.forEach(text => {
