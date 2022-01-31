@@ -105,6 +105,7 @@ h1 .spacer::selection {
     border-radius: 1000px;
     padding: 0px 10px;
     margin: 0px -10px;
+    
     /* transition: all 150ms ease-in; */
 }
 
