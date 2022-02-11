@@ -9,6 +9,11 @@ let colors = ['#01956e', '#fe601e', '#ff8657', '#0047f5', '#008cc8', '#ffed3b']
 
 let cursor = document.getElementById('cursor')
 
+let covidInfo = document.querySelector(".covid-info")
+
+toggleHightlight(covidInfo)
+
+
 window.addEventListener('mousemove', e => {
   if (e.target.tagName.toLowerCase() === 'a') {
     cursor.classList.add('pointer')

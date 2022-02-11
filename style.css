@@ -98,6 +98,7 @@ h1 .spacer::selection {
     background-color: white;
     color: black;
 }
+
 .hover-style-1 {
     color: white;
     background-color: rgba(0, 0, 255, .9);
@@ -105,7 +106,7 @@ h1 .spacer::selection {
     border-radius: 1000px;
     padding: 0px 10px;
     margin: 0px -10px;
-    
+
     /* transition: all 150ms ease-in; */
 }
 
@@ -118,9 +119,10 @@ h1 .spacer::selection {
 }
 
 .hover-style-1 a,
-.hover-style-2 a{
-color: white !important;
+.hover-style-2 a {
+    color: white !important;
 }
+
 .hover-style-2::after {
     display: inline-block;
     position: absolute;
@@ -130,8 +132,8 @@ color: white !important;
     transform: translate(-5px, 5px) scaleY(1.1);
     /* padding: 0px 8px; */
     width: 10px;
-    height:1em ;
-    
+    height: 1em;
+
     /* margin: 0px -10px; */
     content: "";
 }
@@ -141,7 +143,7 @@ color: white !important;
         padding: 0px 5px;
         margin: 0px -5px;
     }
-    
+
     .hover-style-2::after {
         display: inline-block;
         position: absolute;
@@ -152,7 +154,7 @@ color: white !important;
         /* padding: 0px 8px; */
         width: 5px;
         height: 1em;
-    
+
         /* margin: 0px -10px; */
         content: "";
     }
@@ -173,6 +175,10 @@ color: white !important;
 
 .subtext {
     /* max-width: 1000px; */
+}
+
+.nowrap {
+    white-space: nowrap;
 }
 
 .subtext span,
